@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIP.Tests", "AIP.Tests\AIP.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIP.Model", "AIP.Model\AIP.Model.csproj", "{45A1D4C0-3D4C-454C-AC77-FC7969F8037E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIP.DATA", "AIP.DATA\AIP.DATA.csproj", "{6DFF11FB-7B4B-459E-B880-D50CED837A5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{45A1D4C0-3D4C-454C-AC77-FC7969F8037E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45A1D4C0-3D4C-454C-AC77-FC7969F8037E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45A1D4C0-3D4C-454C-AC77-FC7969F8037E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFF11FB-7B4B-459E-B880-D50CED837A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFF11FB-7B4B-459E-B880-D50CED837A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFF11FB-7B4B-459E-B880-D50CED837A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFF11FB-7B4B-459E-B880-D50CED837A5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -24,7 +24,7 @@ namespace AIP.Model
         public string PassportIssueCountry { get; set; }
         public virtual List<Address> PersonAddress { get; set; }
         public virtual List<PersonStatus> Status { get; set; }
-        public virtual List<EmploymentDetails> Employment { get;  set}
+        public virtual List<EmploymentDetails> Employment { get; set; }
         public virtual List<ExitEntryDetails> AddmissionDetails { get; set; }
 
         public override string ToString()
