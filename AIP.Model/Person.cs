@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace AIP.Model
 {
     public class Person
     {
+        [Key]
         public int PersonId { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
@@ -26,6 +28,7 @@ namespace AIP.Model
         public virtual List<PersonStatus> Status { get; set; }
         public virtual List<EmploymentDetails> Employment { get; set; }
         public virtual List<ExitEntryDetails> AddmissionDetails { get; set; }
+        public virtual List<PersonEducationDetails> EducationDetails { get; set; }
 
         public override string ToString()
         {

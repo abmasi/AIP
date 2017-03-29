@@ -11,34 +11,43 @@ namespace AIP.Service
 {
     public class PersonService : IPersonService
     {
+        private readonly RepositoryBase<Person> _personRepository;
+        private readonly IUnitOfWork _unitOfWork;
+
+        public PersonService(IDbFactory DbFactory)
+        {
+            _personRepository = new PersonRepository(DbFactory);
+            _unitOfWork = new UnitOfWork(DbFactory);
+        }
+
         public void AddAddmission(int Personid, ExitEntryDetails addmission)
         {
-            throw new NotImplementedException();
+            GetPerson(Personid).AddmissionDetails.Add(addmission);
         }
 
         public void AddAddress(int Personid, Address address)
         {
-            throw new NotImplementedException();
+            GetPerson(Personid).PersonAddress.Add(address); ;
         }
 
         public void AddEducation(int Personid, PersonEducationDetails edutcationlevel)
         {
-            throw new NotImplementedException();
+            GetPerson(Personid).EducationDetails.Add(edutcationlevel);
         }
 
         public void AddEmployment(int Personid, EmploymentDetails employment)
         {
-            throw new NotImplementedException();
+            GetPerson(Personid).Employment.Add(employment);
         }
 
         public void AddStatus(int Personid, PersonStatus status)
         {
-            throw new NotImplementedException();
+            GetPerson(Personid).Status.Add(status);
         }
 
         public void CreatePerson(Person person)
         {
-            throw new NotImplementedException();
+            _personRepository.Add(person);
         }
 
         public ExitEntryDetails GetAddmissionDetails(long id)
@@ -48,17 +57,17 @@ namespace AIP.Service
 
         public IEnumerable<ExitEntryDetails> GetAllAddmissionDetails(int Personid)
         {
-            throw new NotImplementedException();
+            return GetPerson(Personid).AddmissionDetails; 
         }
 
         public IEnumerable<Address> GetAllAddress(int Personid)
         {
-            throw new NotImplementedException();
+            return GetPerson(Personid).PersonAddress;
         }
 
         public IEnumerable<PersonEducationDetails> GetAllEducationDetails(int Personid)
         {
-            throw new NotImplementedException();
+            return GetPerson(Personid).EducationDetails;
         }
 
         public PersonEducationDetails GetEducationDetails(long id)
@@ -73,12 +82,12 @@ namespace AIP.Service
 
         public PersonEducationDetails GetHighestEducationDetails(int Personid)
         {
-            throw new NotImplementedException();
+            return GetPerson(Personid).EducationDetails.LastOrDefault();
         }
 
         public ExitEntryDetails GetLastestAddmissionDetails(int Personid)
         {
-            throw new NotImplementedException();
+            return GetPerson(Personid).AddmissionDetails.LastOrDefault();
         }
 
         public EmploymentDetails GetLatestEmploymentDetails(int PersonId)
@@ -88,32 +97,32 @@ namespace AIP.Service
 
         public Person GetPerson(int Personid)
         {
-            throw new NotImplementedException();
+            return _personRepository.GetById(Personid);
         }
 
         public Address GetPersonAddress(long id)
         {
-            throw new NotImplementedException();
+            return null; // _personRepository.GetById(id).PersonAddress.Where(p => p.AddressId == id).FirstOrDefault();
         }
 
         public IEnumerable<EmploymentDetails> GetPersonAllEmployments(int PersonId)
         {
-            throw new NotImplementedException();
+            return GetPerson(PersonId).Employment;
         }
 
         public IEnumerable<PersonStatus> GetPersonAllVisaStatuses(int PersonId)
         {
-            throw new NotImplementedException();
+            return GetPerson(PersonId).Status;
         }
 
         public Address GetPersonLatestAddress(int Personid)
         {
-            throw new NotImplementedException();
+            return GetPerson(Personid).PersonAddress.LastOrDefault();
         }
 
         public PersonStatus GetPersonLatestStatus(int PersonId)
         {
-            throw new NotImplementedException();
+            return GetPerson(PersonId).Status.LastOrDefault();
         }
 
         public PersonStatus GetPersonStatus(long id)
@@ -123,7 +132,7 @@ namespace AIP.Service
 
         public void SavePerson()
         {
-            throw new NotImplementedException();
+            _unitOfWork.Commit();
         }
     }
 }

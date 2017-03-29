@@ -12,6 +12,7 @@ namespace AIP.DATA.Repositories
     {
         public NewsRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+
         }
 
         public IEnumerable<News> GetTopNews()

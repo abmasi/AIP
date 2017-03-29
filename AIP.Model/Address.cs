@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace AIP.Model
 {
     public class Address
     {
+        [Key]
         public long AddressId { get; set; }
         public string StreetAddress { get; set; }
         public string ApartmentNumber { get; set; }
