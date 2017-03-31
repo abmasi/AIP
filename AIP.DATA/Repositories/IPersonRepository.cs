@@ -20,5 +20,6 @@ namespace AIP.DATA.Repositories
         Address GetLatestAddress(string id);
         EmploymentDetails GetLatestEmploymentDetails(string id);
         PersonStatus GetLatestStatus(string id);
+        
     }
 }

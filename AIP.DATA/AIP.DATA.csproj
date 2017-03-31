@@ -88,8 +88,10 @@
     <Compile Include="Repositories\ActivityRepository.cs" />
     <Compile Include="Repositories\IActivityRepository.cs" />
     <Compile Include="Repositories\INewsRepository.cs" />
+    <Compile Include="Repositories\IPersonMongoRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />
     <Compile Include="Repositories\NewsRepository.cs" />
+    <Compile Include="Repositories\PersonMongoRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
