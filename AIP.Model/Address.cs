@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AIP.Model
 {
-    public class Address
+    public class Address : IEntity
     {
-        [Key]
+        public string Id { get; set; }
         public long AddressId { get; set; }
         public string StreetAddress { get; set; }
         public string ApartmentNumber { get; set; }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AIP.Model
 {
-    public class EmploymentDetails
+    public class EmploymentDetails : IEntity
     {
-        [Key]
+        public string Id { get; set; }
         public long EmploymentDetailId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }

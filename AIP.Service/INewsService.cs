@@ -8,7 +8,7 @@ namespace AIP.Service
         IEnumerable<News> GetAllNews();
         IEnumerable<News> GetLatestNews();
 
-        News GetNews(int id);
+        News GetNews(string id);
 
         void CreateNews(News news);
 

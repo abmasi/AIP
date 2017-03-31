@@ -37,7 +37,7 @@ namespace AIP.Service
             return _newsRepository.GetAll().OrderByDescending(x => x.PostedOn).Take(5);
         }
 
-        public News GetNews(int id)
+        public News GetNews(string id)
         {
             return _newsRepository.GetById(id);
         }

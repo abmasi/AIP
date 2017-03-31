@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using AIP.DATA.Infrastructure;
@@ -14,38 +15,38 @@ namespace AIP.DATA.Repositories
         {
         }
 
-        public IEnumerable<ExitEntryDetails> GetPersonAddmissionDetails(int id)
+        public IEnumerable<ExitEntryDetails> GetPersonAddmissionDetails(string id)
         {
             return base.GetById(id).AddmissionDetails.ToList();
         }
 
 
-        public ExitEntryDetails GetLatestAdmissionDetails(int id)
+        public ExitEntryDetails GetLatestAdmissionDetails(string id)
         {
             return base.GetById(id).AddmissionDetails.OrderByDescending(x => x.Date).FirstOrDefault();
         }
 
-        public ExitEntryDetails GetFirstAdmissionDetails(int id)
+        public ExitEntryDetails GetFirstAdmissionDetails(string id)
         {
             return base.GetById(id).AddmissionDetails.OrderBy(x => x.Date).FirstOrDefault();
         }
 
-        public IEnumerable<Address> GetPersonAddress(int id)
+        public IEnumerable<Address> GetPersonAddress(string id)
         {
             return base.GetById(id).PersonAddress.ToList();
         }
 
-        public Address GetLatestAddress(int id)
+        public Address GetLatestAddress(string id)
         {
             return base.GetById(id).PersonAddress.OrderByDescending(x => x.AddressId).FirstOrDefault();
         }
 
-        public IEnumerable<EmploymentDetails> GetPersonEmploymentDetails(int id)
+        public IEnumerable<EmploymentDetails> GetPersonEmploymentDetails(string id)
         {
             return base.GetById(id).Employment.ToList();
         }
 
-        public EmploymentDetails GetLatestEmploymentDetails(int id)
+        public EmploymentDetails GetLatestEmploymentDetails(string id)
         {
             var obj = base.GetById(id).Employment.Where(x => x.EndDate == null).FirstOrDefault();
 
@@ -57,14 +58,34 @@ namespace AIP.DATA.Repositories
             return obj;
         }
 
-        public IEnumerable<PersonStatus> GetPersonStatus(int id)
+        public IEnumerable<PersonStatus> GetPersonStatus(string id)
         {
             return base.GetById(id).Status.ToList();
         }
 
-        public PersonStatus GetLatestStatus(int id)
+        public PersonStatus GetLatestStatus(string id)
         {
             return base.GetById(id).Status.OrderByDescending(x => x.ApprovalDate).FirstOrDefault();
+        }
+
+        public bool Exists(Expression<Func<Person, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDisposable RequestStart()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RequestDone()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(string Id)
+        {
+            base.Delete(this.GetById(Id));
         }
     }
 }

@@ -82,8 +82,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PersonControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Service\PersonServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -92,6 +94,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AIP.Service\AIP.Service.csproj">
+      <Project>{a534c22b-280b-46da-8bae-6cf4cb822432}</Project>
+      <Name>AIP.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AIP\AIP.csproj">
       <Project>{BF4122B9-01E9-43D9-BE64-501684AB7AEE}</Project>
       <Name>AIP</Name>

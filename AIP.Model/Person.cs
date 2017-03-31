@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AIP.Model
 {
-    public class Person
+    public class Person : IEntity
     {
-        [Key]
+        
         public int PersonId { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
@@ -29,6 +29,11 @@ namespace AIP.Model
         public virtual List<EmploymentDetails> Employment { get; set; }
         public virtual List<ExitEntryDetails> AddmissionDetails { get; set; }
         public virtual List<PersonEducationDetails> EducationDetails { get; set; }
+
+        public string Id
+        {
+            get; set;
+        }
 
         public override string ToString()
         {

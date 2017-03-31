@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace AIP.Model
 {
-    public class Activity
+    public class Activity : IEntity
     {
-        [Key]
+        public string Id { get; set; }
         public string ActivityId { get; set; }
         public string ActivityDetails { get; set; }
     }

@@ -5,38 +5,38 @@ namespace AIP.Service
 {
     public interface IPersonService
     {
-        Person GetPerson(int Personid);
+        Person GetPerson(string Personid);
 
         void CreatePerson(Person person);
 
         void SavePerson();
 
-        void AddAddress(int Personid, Address address);
-        void AddAddmission(int Personid, ExitEntryDetails addmission);
-        void AddEducation(int Personid, PersonEducationDetails edutcationlevel);
-        void AddStatus(int Personid, PersonStatus status);
-        void AddEmployment(int Personid, EmploymentDetails employment);
+        void AddAddress(string Personid, Address address);
+        void AddAddmission(string Personid, ExitEntryDetails addmission);
+        void AddEducation(string Personid, PersonEducationDetails edutcationlevel);
+        void AddStatus(string Personid, PersonStatus status);
+        void AddEmployment(string Personid, EmploymentDetails employment);
         
 
-        IEnumerable<Address> GetAllAddress(int Personid);
-        Address GetPersonLatestAddress(int Personid);
+        IEnumerable<Address> GetAllAddress(string Personid);
+        Address GetPersonLatestAddress(string Personid);
         Address GetPersonAddress(long id);
 
-        IEnumerable<ExitEntryDetails> GetAllAddmissionDetails(int Personid);
-        ExitEntryDetails GetLastestAddmissionDetails(int Personid);
+        IEnumerable<ExitEntryDetails> GetAllAddmissionDetails(string Personid);
+        ExitEntryDetails GetLastestAddmissionDetails(string Personid);
         ExitEntryDetails GetAddmissionDetails(long id);
 
-        IEnumerable<PersonEducationDetails> GetAllEducationDetails(int Personid);
+        IEnumerable<PersonEducationDetails> GetAllEducationDetails(string Personid);
         PersonEducationDetails GetEducationDetails(long id);
-        PersonEducationDetails GetHighestEducationDetails(int Personid);
+        PersonEducationDetails GetHighestEducationDetails(string Personid);
 
-        IEnumerable<PersonStatus> GetPersonAllVisaStatuses(int PersonId);
+        IEnumerable<PersonStatus> GetPersonAllVisaStatuses(string PersonId);
         PersonStatus GetPersonStatus(long id);
-        PersonStatus GetPersonLatestStatus(int PersonId);
+        PersonStatus GetPersonLatestStatus(string PersonId);
 
-        IEnumerable<EmploymentDetails> GetPersonAllEmployments(int PersonId);
+        IEnumerable<EmploymentDetails> GetPersonAllEmployments(string PersonId);
         EmploymentDetails GetEmploymentDetails(long id);
-        EmploymentDetails GetLatestEmploymentDetails(int PersonId);
+        EmploymentDetails GetLatestEmploymentDetails(string PersonId);
 
     }
 }

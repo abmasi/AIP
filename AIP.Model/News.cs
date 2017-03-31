@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace AIP.Model
 {
-    public class News
+    public class News : IEntity
     {
-        [Key]
+        public string Id
+        {
+            get; set;
+        }
+
         public string NewsId { get; set; }
         public string Header { get; set; }
         public string ShortDescription { get; set; }

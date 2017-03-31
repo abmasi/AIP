@@ -10,15 +10,15 @@ namespace AIP.DATA.Repositories
 {
     public interface IPersonRepository : IRepository<Person>
     {
-        IEnumerable<Address> GetPersonAddress(int id);
-        IEnumerable<PersonStatus> GetPersonStatus(int id);
-        IEnumerable<EmploymentDetails> GetPersonEmploymentDetails(int id);
-        IEnumerable<ExitEntryDetails> GetPersonAddmissionDetails(int id);
+        IEnumerable<Address> GetPersonAddress(string id);
+        IEnumerable<PersonStatus> GetPersonStatus(string id);
+        IEnumerable<EmploymentDetails> GetPersonEmploymentDetails(string id);
+        IEnumerable<ExitEntryDetails> GetPersonAddmissionDetails(string id);
 
-        ExitEntryDetails GetLatestAdmissionDetails(int id);
-        ExitEntryDetails GetFirstAdmissionDetails(int id);
-        Address GetLatestAddress(int id);
-        EmploymentDetails GetLatestEmploymentDetails(int id);
-        PersonStatus GetLatestStatus(int id);
+        ExitEntryDetails GetLatestAdmissionDetails(string id);
+        ExitEntryDetails GetFirstAdmissionDetails(string id);
+        Address GetLatestAddress(string id);
+        EmploymentDetails GetLatestEmploymentDetails(string id);
+        PersonStatus GetLatestStatus(string id);
     }
 }

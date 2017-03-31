@@ -50,7 +50,7 @@ namespace AIP.DATA.Infrastructure
                 Delete(obj);
         }
 
-        public virtual T GetById(int id)
+        public virtual T GetById(string id)
         {
             return dbSet.Find(id);
         }

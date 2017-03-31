@@ -20,27 +20,27 @@ namespace AIP.Service
             _unitOfWork = new UnitOfWork(DbFactory);
         }
 
-        public void AddAddmission(int Personid, ExitEntryDetails addmission)
+        public void AddAddmission(string Personid, ExitEntryDetails addmission)
         {
             GetPerson(Personid).AddmissionDetails.Add(addmission);
         }
 
-        public void AddAddress(int Personid, Address address)
+        public void AddAddress(string Personid, Address address)
         {
             GetPerson(Personid).PersonAddress.Add(address); ;
         }
 
-        public void AddEducation(int Personid, PersonEducationDetails edutcationlevel)
+        public void AddEducation(string Personid, PersonEducationDetails edutcationlevel)
         {
             GetPerson(Personid).EducationDetails.Add(edutcationlevel);
         }
 
-        public void AddEmployment(int Personid, EmploymentDetails employment)
+        public void AddEmployment(string Personid, EmploymentDetails employment)
         {
             GetPerson(Personid).Employment.Add(employment);
         }
 
-        public void AddStatus(int Personid, PersonStatus status)
+        public void AddStatus(string Personid, PersonStatus status)
         {
             GetPerson(Personid).Status.Add(status);
         }
@@ -55,17 +55,17 @@ namespace AIP.Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ExitEntryDetails> GetAllAddmissionDetails(int Personid)
+        public IEnumerable<ExitEntryDetails> GetAllAddmissionDetails(string Personid)
         {
             return GetPerson(Personid).AddmissionDetails; 
         }
 
-        public IEnumerable<Address> GetAllAddress(int Personid)
+        public IEnumerable<Address> GetAllAddress(string Personid)
         {
             return GetPerson(Personid).PersonAddress;
         }
 
-        public IEnumerable<PersonEducationDetails> GetAllEducationDetails(int Personid)
+        public IEnumerable<PersonEducationDetails> GetAllEducationDetails(string Personid)
         {
             return GetPerson(Personid).EducationDetails;
         }
@@ -80,22 +80,22 @@ namespace AIP.Service
             throw new NotImplementedException();
         }
 
-        public PersonEducationDetails GetHighestEducationDetails(int Personid)
+        public PersonEducationDetails GetHighestEducationDetails(string Personid)
         {
             return GetPerson(Personid).EducationDetails.LastOrDefault();
         }
 
-        public ExitEntryDetails GetLastestAddmissionDetails(int Personid)
+        public ExitEntryDetails GetLastestAddmissionDetails(string Personid)
         {
             return GetPerson(Personid).AddmissionDetails.LastOrDefault();
         }
 
-        public EmploymentDetails GetLatestEmploymentDetails(int PersonId)
+        public EmploymentDetails GetLatestEmploymentDetails(string PersonId)
         {
             throw new NotImplementedException();
         }
 
-        public Person GetPerson(int Personid)
+        public Person GetPerson(string Personid)
         {
             return _personRepository.GetById(Personid);
         }
@@ -105,22 +105,22 @@ namespace AIP.Service
             return null; // _personRepository.GetById(id).PersonAddress.Where(p => p.AddressId == id).FirstOrDefault();
         }
 
-        public IEnumerable<EmploymentDetails> GetPersonAllEmployments(int PersonId)
+        public IEnumerable<EmploymentDetails> GetPersonAllEmployments(string PersonId)
         {
             return GetPerson(PersonId).Employment;
         }
 
-        public IEnumerable<PersonStatus> GetPersonAllVisaStatuses(int PersonId)
+        public IEnumerable<PersonStatus> GetPersonAllVisaStatuses(string PersonId)
         {
             return GetPerson(PersonId).Status;
         }
 
-        public Address GetPersonLatestAddress(int Personid)
+        public Address GetPersonLatestAddress(string Personid)
         {
             return GetPerson(Personid).PersonAddress.LastOrDefault();
         }
 
-        public PersonStatus GetPersonLatestStatus(int PersonId)
+        public PersonStatus GetPersonLatestStatus(string PersonId)
         {
             return GetPerson(PersonId).Status.LastOrDefault();
         }
