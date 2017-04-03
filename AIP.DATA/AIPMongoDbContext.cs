@@ -24,6 +24,8 @@ namespace AIP.DATA
         {
             var connectionString = ConfigurationManager.ConnectionStrings[CONNECTION_STRING_NAME].ConnectionString;
             _client = new MongoClient(connectionString);
+            //_database = new MongoDatabase(_client.GetServer(), new MongoDatabaseSettings(_client.GetServer(), DATABASE_NAME));
+            _database = new MongoDatabase(_client.GetServer(), DATABASE_NAME , new MongoDatabaseSettings());
             //_database = _client.Settings.  .GetDatabase(DATABASE_NAME);
         }
 

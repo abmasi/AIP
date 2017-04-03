@@ -22,11 +22,11 @@ namespace AIP.Controllers
         public ActionResult Index()
         {
             IEnumerable<NewsViewModel> viewModelNews;
-            IEnumerable<News> news = newService.GetLatestNews();
+            //IEnumerable<News> news = newService.GetLatestNews();
 
-            viewModelNews = AutoMapper.Mapper.Map<IEnumerable<News>, IEnumerable<NewsViewModel>>(news);
+            //viewModelNews = AutoMapper.Mapper.Map<IEnumerable<News>, IEnumerable<NewsViewModel>>(news);
 
-            return View(viewModelNews);
+            return View();
         }
     }
 }

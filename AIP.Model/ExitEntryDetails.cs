@@ -19,7 +19,8 @@ namespace AIP.Model
         public string PortOfEntry { get; set; }
         public DateTime ExpiryOn { get; set; }
         public string VisaType { get; set; }
-        
+        public string PersonId { get; set; }
+
 
     }
 }

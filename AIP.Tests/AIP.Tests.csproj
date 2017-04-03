@@ -85,6 +85,7 @@
     <Compile Include="Controllers\PersonControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Repostiory\PersonRepositoryTest.cs" />
     <Compile Include="Service\PersonServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +95,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AIP.DATA\AIP.DATA.csproj">
+      <Project>{6dff11fb-7b4b-459e-b880-d50ced837a5c}</Project>
+      <Name>AIP.DATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AIP.Model\AIP.Model.csproj">
+      <Project>{45a1d4c0-3d4c-454c-ac77-fc7969f8037e}</Project>
+      <Name>AIP.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AIP.Service\AIP.Service.csproj">
       <Project>{a534c22b-280b-46da-8bae-6cf4cb822432}</Project>
       <Name>AIP.Service</Name>

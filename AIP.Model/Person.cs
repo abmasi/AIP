@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace AIP.Model
     public class Person : IEntity
     {
         
-        public int PersonId { get; set; }
+        public string PersonId { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -33,7 +34,7 @@ namespace AIP.Model
         public string Id
         {
             get; set;
-        }
+        } //= new ObjectId().ToString();
 
         public override string ToString()
         {

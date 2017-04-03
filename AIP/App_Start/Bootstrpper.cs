@@ -39,8 +39,11 @@ namespace AIP
 
             builder.RegisterInstance(new NewsRepository(dbfacory))
                 .As<INewsRepository>();
-            builder.RegisterInstance(new PersonRepository(dbfacory))
-                .As<IPersonRepository>();
+            //builder.RegisterInstance(new PersonRepository(dbfacory))
+                //.As<IPersonRepository>();
+
+            builder.RegisterInstance(new PersonMongoRepository())
+                .As<IPersonMongoRepository>();
 
             //builder.RegisterType<NewsService>().As<INewsService>().InstancePerRequest();
 

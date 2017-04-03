@@ -19,5 +19,6 @@ namespace AIP.Model
         public string Country { get; set; }
         public string ZipCode { get; set; }
         public AddressType? Type { get; set; }
+        public string PersonId { get; set; }
     }
 }

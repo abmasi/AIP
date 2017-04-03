@@ -15,5 +15,6 @@ namespace AIP.Model
         public DateTime? EndDate { get; set; }
         public string EmployerName { get; set; }
         public string EmployerDetails { get; set;}
+        public string PersonId { get; set; }
     }
 }

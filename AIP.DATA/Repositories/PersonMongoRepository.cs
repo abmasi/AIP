@@ -8,10 +8,10 @@ using AIP.DATA.Infrastructure;
 
 namespace AIP.DATA.Repositories
 {
-    public class PersonMongoRepository : MongoRepositoryBase<Person>, IPersonMongoRepository, IPersonRepository
+    public class PersonMongoRepository : MongoRepositoryBase<Person>, IPersonMongoRepository
     {
 
-        public PersonMongoRepository(string CollectionName) : base(CollectionName)
+        public PersonMongoRepository() : base("person")
         {
 
         }
@@ -66,6 +66,6 @@ namespace AIP.DATA.Repositories
             return base.GetById(Id);
         }
 
-        
+       
     }
 }
